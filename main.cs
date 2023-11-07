@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using observer;
-
+using factory;
 namespace main
 {
   class Program
@@ -27,6 +27,11 @@ namespace main
   
           // Notificando observadores novamente
           subject.SetMessage("Outro evento ocorreu!");
+
+          // Cria uma instância da factory de produtos A
+          Factory factoryA = new FabricaProductA();
+          Product produtoA = factoryA.CriarProduto();
+          produtoA.Criar();
       }
   }
 }
